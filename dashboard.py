@@ -38,7 +38,8 @@ def simulate_betting_low_risk(X_test, y_test, model, initial_balance=1000):
             'Bet_Amount': bet_amount,
             'Balance': balance,
             'Odds': odds,
-            'Payout': payout if predicted_class == actual_result else 0
+            'Payout': payout if predicted_class == actual_result else 0,
+            'Predicted_Probability': prediction_prob[1]
         })
 
     return pd.DataFrame(bet_history), balance
@@ -73,7 +74,8 @@ def simulate_betting_high_risk(X_test, y_test, model, initial_balance=1000):
             'Bet_Amount': bet_amount,
             'Balance': balance,
             'Odds': odds,
-            'Payout': payout if predicted_class == actual_result else 0
+            'Payout': payout if predicted_class == actual_result else 0,
+            'Predicted_Probability': prediction_prob[1]
         })
 
     return pd.DataFrame(bet_history), balance
@@ -109,7 +111,8 @@ def simulate_betting_martingale(X_test, y_test, model, initial_balance=1000, ini
             'Bet_Amount': bet_amount,
             'Balance': balance,
             'Odds': odds,
-            'Payout': payout if predicted_class == actual_result else 0
+            'Payout': payout if predicted_class == actual_result else 0,
+            'Predicted_Probability': prediction_prob[1]
         })
 
     return pd.DataFrame(bet_history), balance
@@ -140,7 +143,8 @@ def simulate_betting_flat(X_test, y_test, model, initial_balance=1000, bet_fract
             'Bet_Amount': bet_amount,
             'Balance': balance,
             'Odds': odds,
-            'Payout': payout if predicted_class == actual_result else 0
+            'Payout': payout if predicted_class == actual_result else 0,
+            'Predicted_Probability': prediction_prob[1]
         })
 
     return pd.DataFrame(bet_history), balance
@@ -194,28 +198,29 @@ if strategy == 'Low-Risk':
     st.write(low_risk_analysis)
     st.line_chart(low_risk_df['Balance'])
     st.write("### Bet Details")
-    st.write(low_risk_df[['Game', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
+    st.write(low_risk_df[['Game', 'Predicted_Probability', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
 
 elif strategy == 'High-Risk':
     st.write("### High-Risk Strategy Analysis")
     st.write(high_risk_analysis)
     st.line_chart(high_risk_df['Balance'])
     st.write("### Bet Details")
-    st.write(high_risk_df[['Game', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
+    st.write(high_risk_df[['Game', 'Predicted_Probability', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
 
 elif strategy == 'Martingale':
     st.write("### Martingale Strategy Analysis")
     st.write(martingale_analysis)
     st.line_chart(martingale_df['Balance'])
     st.write("### Bet Details")
-    st.write(martingale_df[['Game', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
+    st.write(martingale_df[['Game', 'Predicted_Probability', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
 
 else:
     st.write("### Flat Betting Strategy Analysis")
     st.write(flat_analysis)
     st.line_chart(flat_df['Balance'])
     st.write("### Bet Details")
-    st.write(flat_df[['Game', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
+    st.write(flat_df[['Game', 'Predicted_Probability', 'Predicted_Class', 'Actual_Result', 'Bet_Amount', 'Odds', 'Payout']].reset_index(drop=True))
+
 
 # Additional Insights
 st.sidebar.title("Insights")
