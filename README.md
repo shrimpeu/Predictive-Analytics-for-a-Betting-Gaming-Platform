@@ -1,7 +1,7 @@
 # Predictive-Analytics-for-a-Betting-Gaming-Platform
 
 ## Project Overview
-This project is developed as part of our Week #3 internship at Lamina Studios, LLC. The goal is to create a predictive model that forecasts the outcomes of sports events or gaming matches based on historical data, player statistics, and other relevant factors. The model will be used to inform betting strategies and enhance user engagement on the platform.
+This project is developed as part of our Week #3-5 internship at Lamina Studios, LLC. The goal is to create a predictive model that forecasts the outcomes of sports events or gaming matches based on historical data, player statistics, and other relevant factors. The model will be used to inform betting strategies and enhance user engagement on the platform.
 
 ## Team Members
 - **Escueta, Jeferson**
