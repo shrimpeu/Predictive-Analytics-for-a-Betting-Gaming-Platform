@@ -19,3 +19,20 @@ This project is developed as part of our Week #3-5 internship at Lamina Studios,
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/Betting-Analytics-Platform.git
+2. Navigate to the project directory:
+   ```bash
+   cd Betting-Analytics-Platform
+3. Create and activate a virtual environment:
+   On macOS/Linux:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+   On Windows:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+4. Install the required dependencies from the requirements.txt file:
+   ```bash
+   pip install -r requirements.txt
+5. Now you're ready to run the project!
