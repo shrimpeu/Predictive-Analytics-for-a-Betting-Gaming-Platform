@@ -21,7 +21,7 @@ This project is developed as part of our Week #3-5 internship at Lamina Studios,
    git clone https://github.com/yourusername/Betting-Analytics-Platform.git
 2. Navigate to the project directory:
    ```bash
-   cd Betting-Analytics-Platform
+   cd Predictive-Analytics-for-a-Betting-Gaming-Platform
 3. Create and activate a virtual environment:
    On macOS/Linux:
    ```bash
